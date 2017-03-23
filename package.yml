@@ -1,0 +1,23 @@
+name       : kodi-addon-inputstream-adaptive
+version    : 1.0.6
+release    : 1
+source     :
+    - https://github.com/peak3d/inputstream.adaptive/archive/v1.0.6.tar.gz : 7e3fbb9bac11777b2f553fce0f36f2dd463adbb956a957e6c000c7013202b9ad
+license    : GPL-2.0
+component  : desktop.multimedia
+summary    : Adaptive file addon for Kodi's InputStream Interface.
+description: |
+    The adaptive file addon for Kodi's InputStream Interface adds DASH
+    protocol support to e.g. the included-by-default YouTube Video addon,
+    which allows for the recombination and seamless display of content
+    where the video and audio streams are split by default.
+builddeps  :
+    - pkgconfig(kodiplatform)
+    - pkgconfig(p8-platform)
+    - kodi-devel
+setup      : |
+    %cmake .
+build      : |
+    %make
+install    : |
+    %make_install
